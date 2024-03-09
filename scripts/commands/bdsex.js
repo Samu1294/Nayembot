@@ -1,8 +1,8 @@
 /** I am doing this coding with a lot of difficulty, please don't post it yourself¯\_(ツ)_/¯ **/
 module.exports.config = {
-  name: "lixie", 
+  name: "red", 
   version: "1.0.0", 
-  permission: 0,
+  permission: 2,
   credits: "Nayan",
   description: "Random sad video",
   prefix: true,

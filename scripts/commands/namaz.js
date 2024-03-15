@@ -18,7 +18,7 @@ module.exports.run = async function ({ api, event, args }) {
   if (!prompt) return api.sendMessage("[ ! ] Input Your address", event.threadID, event.messageID);
 
 
- const RAHAD = `http://api.aladhan.com/v1/timingsByAddress?address=${encodeURIComponent(prompt)}`;
+ const RAHAD = ` http://api.aladhan.com/v1/timingsByAddress?address=${encodeURIComponent(prompt)}`;
 
   try {
     const response = await axios.get(RAHAD);

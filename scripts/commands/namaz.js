@@ -1,14 +1,13 @@
 module.exports.config = {
   name: "namaz",
-  version: "1.0.0", 
-  Permssion: 0,
-  credits: "Rahad", 
-  description: "namaj time",
+  version: "1.0.0",
+  permission: 0,
+  credits: "ryuko",
   prefix: true,
-  Category: "Islamic", 
-  usages: "/namaj[Dhaka]", 
-  cooldowns: 0,
-  dependencies: [] 
+  description: "rules",
+  category: "rules",
+  usages: "",
+  cooldowns: 5,
 };
 
 module.exports.run = async function ({ api, event, args }) {

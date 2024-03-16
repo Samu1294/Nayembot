@@ -3,7 +3,7 @@ const ytdl = require('ytdl-core');
 const { resolve } = require('path');
 async function downloadMusicFromYoutube(link, path) {
   var timestart = Date.now();
-  if(!link) return 'Thiếu link'
+  if(!link) return 'Missing link'
   var resolveFunc = function () { };
   var rejectFunc = function () { };
   var returnPromise = new Promise(function (resolve, reject) {
@@ -28,7 +28,6 @@ async function downloadMusicFromYoutube(link, path) {
         })
   return returnPromise
 }
-
 module.exports.config = {
   name: "song", 
   version: "1.0.0", 
@@ -40,9 +39,9 @@ module.exports.config = {
   usages: "user", 
   cooldowns: 5,
   dependencies: {
-		"ytdl-core":"",
+    "ytdl-core":"",
     "simple-youtube-api":""
-	}
+  }
 };
 
 module.exports.handleReply = async function ({ api, event, handleReply }) {
@@ -54,10 +53,14 @@ module.exports.handleReply = async function ({ api, event, handleReply }) {
         if (fs.statSync(path).size > 26214400) return api.sendMessage('The file cannot be sent because the capacity is greater than 25MB.', event.threadID, () => fs.unlinkSync(path), event.messageID);
         api.unsendMessage(handleReply.messageID)
         return api.sendMessage({ 
-		body: `🎵 Title: ${data.title}\n🎶 Name Channel : ${data.author}\n⏱️ Time: ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n🥰 Likes: ${data.likes}\n⏱️Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
+    body: `🕋[ 𝐆𝐎𝐉𝐎𝐋 ]: ${data.title}\n🎶🎶 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: ${data.author}\n⏱️ 𝗧𝗶𝗺𝗲: ${this.convertHMS(data.dur)}\n👀 𝗩𝗶𝗲𝘄𝘀: ${data.viewCount}\n🥰 𝗟𝗶𝗸𝗲: ${data.likes}\n⏱️Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n🔰==𝐒𝐀𝐈𝐅𝐔𝐋_𝐊𝐈𝐍𝐆==🔰
+
+[ 𝐒𝐀𝐈𝐅𝐔𝐋_𝐊𝐈𝐍𝐆 ]
+
+⇆ㅤㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤㅤ↻`,
             attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
          event.messageID)
-            
+
     }
     catch (e) { return console.log(e) }
 }
@@ -72,7 +75,7 @@ module.exports.convertHMS = function(value) {
     return (hours != '00' ? hours +':': '') + minutes+':'+seconds;
 }
 module.exports.run = async function ({ api, event, args }) {
-    if (args.length == 0 || !args) return api.sendMessage('» উফফ আবাল কি গান শুনতে চাস তার ২/১ লাইন তো লেখবি নাকি 🥵 empty!', event.threadID, event.messageID);
+    if (args.length == 0 || !args) return api.sendMessage('»আপনি যে গানটি শুনতে চান তার একটি লাইন লিখুন 💝 এই বার empty!😓\n আবার নতুন করে কমান্ড দেন [ 𝐒𝐀𝐈𝐅𝐔𝐋_𝐊𝐈𝐍𝐆 ]', event.threadID, event.messageID);
     const keywordSearch = args.join(" ");
     var path = `${__dirname}/cache/1.mp3`
     if (fs.existsSync(path)) { 
@@ -83,10 +86,10 @@ module.exports.run = async function ({ api, event, args }) {
             var data = await downloadMusicFromYoutube(args.join(" "), path);
             if (fs.statSync(path).size > 26214400) return api.sendMessage('Unable to send files because the capacity is greater than 25MB .', event.threadID, () => fs.unlinkSync(path), event.messageID);
             return api.sendMessage({ 
-                body: `🎵 Title: ${data.title}\n🎶 Name Channel: ${data.author}\n⏱️ Time: ${this.convertHMS(data.dur)}\n👀 Views: ${data.viewCount}\n👍 Likes: ${data.likes}\n⏱️ Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n💿====DISME PROJECT====💿`,
+                body: `🎵 [𝐆𝐎𝐉𝐎𝐋]: ${data.title}\n🎶 𝗖𝗵𝗮𝗻𝗻𝗲𝗹: ${data.author}\n⏱️ 𝗧𝗶𝗺𝗲: ${this.convertHMS(data.dur)}\n👀 𝗩𝗶𝗲𝘄𝘀: ${data.viewCount}\n👍 𝗟𝗶𝗸𝗲𝘀: ${data.likes}\n⏱️ Processing time: ${Math.floor((Date.now()- data.timestart)/1000)} second\n🔰==𝐒𝐀𝐈𝐅𝐔𝐋_𝐊𝐈𝐍𝐆==🔰`,
                 attachment: fs.createReadStream(path)}, event.threadID, ()=> fs.unlinkSync(path), 
             event.messageID)
-            
+
         }
         catch (e) { return console.log(e) }
     } else {
@@ -101,7 +104,7 @@ module.exports.run = async function ({ api, event, args }) {
               num = num+=1
               msg += (`${num} - ${value.title} (${value.length.simpleText})\n\n`);
             }
-            var body = `»🔎 There's ${link.length} the result coincides with your search keyword:\n\n${msg}» Reply(feedback) select one of the searches above `
+            var body = `»আপনার সার্চ দেওয়া ${link.length}  টি গান নিচে দেওয়া হল 🌐: [ 𝐒𝐀𝐈𝐅𝐔𝐋_𝐊𝐈𝐍𝐆 ]\n\n${msg}»  আপনি যে গজলটি চালু করতে চান নাম্বার দিয়ে  রিপ্লাই দেন 💝 [ 𝐒𝐀𝐈𝐅𝐔𝐋_𝐊𝐈𝐍𝐆 ] `
             return api.sendMessage({
               body: body
             }, event.threadID, (error, info) => global.client.handleReply.push({
@@ -112,7 +115,7 @@ module.exports.run = async function ({ api, event, args }) {
               link
             }), event.messageID);
           } catch(e) {
-            return api.sendMessage('An error has occurred, please try again in a moment!!\n' + e, event.threadID, event.messageID);
+            return api.sendMessage('একটি ত্রুটি ঘটেছে, অনুগ্রহ করে কিছুক্ষণের মধ্যে আবার চেষ্টা করুন!!\n' + e, event.threadID, event.messageID);
         }
     }
                                                                                                                                                                                                        }

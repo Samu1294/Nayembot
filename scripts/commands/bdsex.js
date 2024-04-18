@@ -2,7 +2,7 @@
 module.exports.config = {
   name: "red", 
   version: "1.0.0", 
-  permission: 0,
+  permission: 2,
   credits: "Nayan",
   description: "Random sad video",
   prefix: true,

@@ -5,14 +5,14 @@
   "language": "en",
   "notification": true,
   "approval": false,
-  "BOTNAME": "FARHAN-BOT",
+  "BOTNAME": "NAYEM-BOT",
   "PREFIX": "/",
   "OPERATOR": [
-    "100069926588234"
+    "100067342487862"
   ],
   "ADMINBOT": [
-    "100069926588234",
-    "100089974857944"
+    "100067342487862",
+    "100067342487862"
   ],
   "OWNER": ["100000959749712"], 
   "APPROVED": [],

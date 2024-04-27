@@ -15,8 +15,8 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
   var { threadID, messageID } = event;
   if (event.body.indexOf("By")==0 || (event.body.indexOf("by")==0 || (event.body.indexOf("bye")==0 || (event.body.indexOf("Bye")==0)))) {
     var msg = {
-        body: "আবার কথা হবে 🥰.\n\n~ যেকোনো তথ্যের জন্য আমার id তে নক করতে পারেন 👇\nhttps://www.facebook.com/FarhanIslamImon.official?mibextid=ZbWKwL",
-        attachment: fs.createReadStream(__dirname + `/farhanm4/farhan1.mp4`)
+        body: "আবার কথা হবে 🥰.\n\n~ যেকোনো তথ্যের জন্য আমার id তে নক করতে পারেন 👇\https://www.facebook.com/NAYEM.KING.OK",
+        attachment: fs.createReadStream(__dirname + `/farhanm4/farh`)
       }
             api.sendMessage( msg, threadID, messageID);
     api.setMessageReaction("🥀", event.messageID, (err) => {}, true)

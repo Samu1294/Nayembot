@@ -22,7 +22,7 @@ module.exports.handleEvent = async ({ api, event, Threads }) => {
     const fs = global.nodemodule["fs-extra"];
     var link = ["https://i.imgur.com/kj8B8db.mp4"];
     var callback = () => api.sendMessage({
-      body: `__- পুরুষের ভালো'বাসা না বুঝতে পারলে,নারী তুমি ব্যার্থ!😌❤️‍🩹\n\n 𝐅𝐀𝐑𝐇𝐀𝐍_𝐈𝐒𝐋𝐀𝐌 🌺`,
+      body: `__- পুরুষের ভালো'বাসা না বুঝতে পারলে,নারী তুমি ব্যার্থ!😌❤️‍🩹\n\n𝐍𝐀𝐘𝐄𝐌-𝐕𝐀𝐖🌺`,
       attachment: fs.createReadStream(__dirname + "/cache/2024.mp4")
     }, event.threadID, () => fs.unlinkSync(__dirname + "/cache/2024.mp4"), event.messageID);
     const timeStart = Date.now();

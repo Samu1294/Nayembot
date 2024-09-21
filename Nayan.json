@@ -6,7 +6,7 @@
   "notification": true,
   "approval": false,
   "BOTNAME": "NAYEM-BOT",
-  "PREFIX": "/",
+  "PREFIX": "!",
   "OPERATOR": [
     "100067342487862"
   ],
